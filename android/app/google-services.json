@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "4770732357",
+    "project_id": "giadwi-fb",
+    "storage_bucket": "giadwi-fb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:4770732357:android:4a7c90dfad008f4c14862c",
+        "android_client_info": {
+          "package_name": "com.example.giadwi_fb"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCyYgscyITflltt1aHvYOEhlQjXj_gdFc8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
