@@ -108,7 +108,7 @@ class _AdminViewState extends State<AdminView> {
                               ),
                             ],
                           ),
-                          leading: Image.network(imageUrl),
+                          leading: Image.network(data.imageUrl),
                           title: Text(data.nama),
                           subtitle: Text(data.createdAt),
                           selectedTileColor: const Color.fromARGB(255, 5, 15, 51),

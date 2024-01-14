@@ -40,7 +40,7 @@ class TotalX extends StatelessWidget {
                   // Tambahkan logika untuk proses "Check Out" di sini
                 },
                 style: ElevatedButton.styleFrom(
-                  primary: const Color.fromARGB(255, 122, 56, 133),
+                  // primary: const Color.fromARGB(255, 122, 56, 133),
                   shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
                 ),
                 child: const Padding(

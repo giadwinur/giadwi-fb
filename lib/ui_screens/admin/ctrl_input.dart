@@ -31,10 +31,12 @@ Future<void> create(AdminX data) async {
   final docId = data.id;
   final nama = data.nama;
   final createdAt = data.createdAt;
+  final imageUrl = data.imageUrl;
+  final harga = data.harga;
   await FirebaseFirestore.instance
       .collection('productName')
       .doc(docId)
-      .set({'nama': nama, 'id': docId, 'created_at': createdAt});
+      .set({'nama': nama, 'id': docId, 'created_at': createdAt, 'image_url': imageUrl, 'harga': harga});
   await FirebaseFirestore.instance.collection('productDetail').doc(docId).set(map);
   userList.insert(0, data);
 }
