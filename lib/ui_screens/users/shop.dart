@@ -1,9 +1,10 @@
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:latihan/ui_screens/admin/ctrl_input.dart';
 import 'package:latihan/ui_screens/admin/data.dart';
 import 'package:latihan/ui_screens/admin/widgets/admin_detail.dart';
-import 'package:latihan/ui_screens/admin/admin_data.dart';
+import 'package:latihan/ui_screens/users/widgets/detail_user.dart';
 // i
 
 class ShopX extends StatefulWidget {
@@ -63,7 +64,7 @@ class _ShopXState extends State<ShopX> {
                             ),
                           ],
                         ),
-                        leading: Image.network(imageUrl),
+                        leading: Image.network(data.imageUrl),
                         title: Text(data.nama),
                         subtitle: Text(data.createdAt),
                         selectedTileColor: const Color.fromARGB(255, 5, 15, 51),
@@ -75,7 +76,7 @@ class _ShopXState extends State<ShopX> {
                           Navigator.push(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => AdminDetail(
+                              builder: (context) => DeatilUser(
                                 id: id,
                               ),
                             ),
@@ -100,7 +101,7 @@ class _ShopXState extends State<ShopX> {
                     children: [
                       Container(
                         decoration: BoxDecoration(
-                          color: Color.fromARGB(255, 114, 54, 125),
+                          color: Colors.purpleAccent,
                           borderRadius: BorderRadius.circular(20),
                         ),
                         child: const Icon(Icons.add),

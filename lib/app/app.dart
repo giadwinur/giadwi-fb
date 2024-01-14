@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 // import 'package:latihan/ui_screens/coba.dart';
 
 import 'package:latihan/ui_screens/home.dart';
+import 'package:latihan/ui_screens/users/widgets/coba.dart';
 // import 'package:latihan/ui_screens/users/widgets/icon_bawah.dart';
 
 class App extends StatelessWidget {

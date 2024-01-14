@@ -144,6 +144,30 @@ class _AdminInputState extends State<AdminInput> {
               ),
               const SizedBox(height: 10),
               TextField(
+                controller: ctrlModel,
+                onChanged: (value) {
+                  setState(() {
+                    isShowClearD = value.isNotEmpty;
+                  });
+                },
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  hintText: 'model',
+                  suffixIcon: isShowClearD
+                      ? IconButton(
+                          onPressed: () {
+                            ctrlModel.clear();
+                            setState(() {
+                              isShowClearD = false;
+                            });
+                          },
+                          icon: const Icon(Icons.clear),
+                        )
+                      : null,
+                ),
+              ),
+              const SizedBox(height: 10),
+              TextField(
                 controller: ctrlHarga,
                 onChanged: (value) {
                   setState(() {
@@ -173,16 +197,20 @@ class _AdminInputState extends State<AdminInput> {
                   ElevatedButton(
                     onPressed: () async {
                       final id = UniqueKey().toString();
+                      final createNew = DateTime.now().toString();
+                      final valModel = ctrlModel.text;
                       final valImage = await upload(id);
                       final valNama = ctrlNama.text;
                       final valWarna = ctrlWarna.text;
                       final valHarga = int.parse(ctrlHarga.text);
                       final newUser = AdminX(
                         id: id,
+                        createdAt: createNew,
                         nama: valNama,
                         warna: valWarna,
                         imageUrl: valImage,
                         harga: valHarga,
+                        model: valModel,
                       );
                       setState(() {
                         isLoading = true;
@@ -194,6 +222,8 @@ class _AdminInputState extends State<AdminInput> {
                       ctrlNama.clear();
                       ctrlWarna.clear();
                       ctrlHarga.clear();
+                      ctrlModel.clear();
+                      // ignore: use_build_context_synchronously
                       Navigator.pop(context);
                     },
                     child: Text(isLoading ? 'Loading ..' : 'Submit'),

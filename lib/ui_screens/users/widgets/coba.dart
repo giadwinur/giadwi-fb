@@ -1,10 +1,8 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:firebase_storage/firebase_storage.dart';
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
+import 'package:latihan/ui_screens/admin/widgets/admin_view.dart';
+import 'package:latihan/ui_screens/users/categori.dart';
 // import 'package:latihan/ui_screens/categori.dart';
-import 'package:latihan/ui_screens/admin/data.dart';
-import 'package:latihan/ui_screens/admin/widgets/admin_detail.dart';
 import 'package:latihan/ui_screens/users/shop.dart';
 import 'package:latihan/ui_screens/users/widgets/home_coba.dart';
 import 'package:latihan/ui_screens/users/widgets/items.dart';
@@ -19,7 +17,16 @@ class Coba extends StatefulWidget {
 }
 
 class _CobaState extends State<Coba> {
-  final List<String> daftarProdukId = ['[#1e81c]', '[#5e139]', '[#5f72f]', '[#7a469]', '[#83e84]', '[#bb2a0]'];
+  final List<String> daftarProdukId = [
+    '[#08b18]',
+    '[#090ed]',
+    '[#0f64f]',
+    '[#31d42]',
+    '[#3db5b]',
+    '[#a3a4c]',
+    '[#1636f]',
+    '[#eea55]'
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -79,7 +86,7 @@ class _CobaState extends State<Coba> {
                     ),
                   ),
                 ),
-                // const CategoriX(),
+                const CategoriX(),
                 Container(
                   alignment: Alignment.centerLeft,
                   margin: const EdgeInsets.symmetric(vertical: 20, horizontal: 10),
@@ -93,15 +100,15 @@ class _CobaState extends State<Coba> {
                   ),
                 ),
 
-                ListView.builder(
-                  shrinkWrap: true,
-                  physics: const NeverScrollableScrollPhysics(),
-                  itemCount: daftarProdukId.length,
-                  itemBuilder: (context, index) {
-                    return ItemX(id: daftarProdukId[index]);
-                  },
-                )
-                // for (String productId in daftarProdukId) ItemX(id: productId)
+                // ListView.builder(
+                //   shrinkWrap: true,
+                //   physics: const NeverScrollableScrollPhysics(),
+                //   itemCount: daftarProdukId.length,
+                //   itemBuilder: (context, index) {
+                //     return ItemX(id: daftarProdukId[index]);
+                //   },
+                // )
+                for (String productId in daftarProdukId) ItemX(id: productId),
               ],
             ),
           )
@@ -142,6 +149,19 @@ class _CobaState extends State<Coba> {
               onTap: () {
                 Navigator.push(
                   context,
+                  MaterialPageRoute(builder: (context) => const AdminView()),
+                );
+              },
+              child: const Badge(
+                padding: EdgeInsets.all(7),
+                backgroundColor: Colors.red,
+                child: Icon(Icons.assignment_ind_outlined, size: 30, color: Colors.purpleAccent),
+              ),
+            ),
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
                   MaterialPageRoute(builder: (context) => const IconAkun()),
                 );
               },
@@ -154,67 +174,6 @@ class _CobaState extends State<Coba> {
           ],
         ),
       ),
-
-      // body: FutureBuilder(
-      //   future: FirebaseStorage.instance.ref().listAll(),
-      //   // initialData: InitialData,
-      //   builder: (context, snapshot) {
-      //     if (snapshot.hasData) {
-      //       return SingleChildScrollView(
-      //         child: Column(
-      //           children: [
-      //             ...List.generate(
-      //               snapshot.data!.items.length,
-      //               (index) {
-      //                 final data = userList[index];
-      //                 final id = data.id;
-      //                 return Card(
-      //                   child: ListTile(
-      //                     title: Text(snapshot.data!.items[index].name),
-      //                     subtitle: Text(snapshot.data!.items[index].fullPath),
-      //                     trailing: IconButton(
-      //                       onPressed: () async {
-      //                         final result = await snapshot.data!.items[index].getDownloadURL();
-      //                         debugPrint(result);
-      //                       },
-      //                       icon: const Icon(Icons.download),
-      //                     ),
-      //                     leading: FutureBuilder(
-      //                       future: snapshot.data!.items[index].getDownloadURL(),
-      //                       builder: (context, snapshot) {
-      //                         if (snapshot.hasData) {
-      //                           return CircleAvatar(
-      //                             backgroundImage: NetworkImage(snapshot.data.toString()),
-      //                           );
-      //                         }
-
-      //                         return const Text('text');
-      //                       },
-      //                     ),
-      //                     // onTap: () {
-      //                     //   setState(() {
-      //                     //     selectedId = id;
-      //                     //   });
-      //                     //   Navigator.push(
-      //                     //     context,
-      //                     //     MaterialPageRoute(
-      //                     //         builder: (context) => AdminDetail(
-      //                     //               id: id,
-      //                     //             )),
-      //                     //   );
-      //                     // }
-      //                   ),
-      //                 );
-      //               },
-      //             )
-      //           ],
-      //         ),
-      //       );
-      //     }
-
-      //     return const Text('text');
-      //   },
-      // ),
     );
   }
 }

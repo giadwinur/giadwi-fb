@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:latihan/ui_screens/admin/ctrl_input.dart';
-import 'package:latihan/ui_screens/admin/edit_product.dart';
 
-class AdminDetail extends StatelessWidget {
-  const AdminDetail({
+class DeatilUser extends StatelessWidget {
+  const DeatilUser({
     Key? key,
     required this.id,
   }) : super(key: key);
@@ -37,18 +36,6 @@ class AdminDetail extends StatelessWidget {
                 ),
               )
             : const Center(child: CircularProgressIndicator()),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          // Navigate to the input page with the ID for editing
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const EditProduct(),
-            ),
-          );
-        },
-        child: const Icon(Icons.edit),
       ),
     );
   }

@@ -16,10 +16,10 @@ Future<List<AdminX>> getColl() async {
   return users;
 }
 
-Future<List<Map<String, dynamic>>> getItemData() async {
-  final snapshot = await FirebaseFirestore.instance.collection('items').get();
-  return snapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
-}
+// Future<List<Map<String, dynamic>>> getItemData() async {
+//   final snapshot = await FirebaseFirestore.instance.collection('items').get();
+//   return snapshot.docs.map((doc) => doc.data() as Map<String, dynamic>).toList();
+// }
 
 Future<DocumentSnapshot<Map<String, dynamic>>> getDoc(String id) async {
   final result = await FirebaseFirestore.instance.collection('productDetail').doc(id).get();

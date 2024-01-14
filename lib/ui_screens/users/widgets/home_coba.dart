@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:latihan/ui_screens/admin/data.dart';
-import 'package:latihan/ui_screens/admin/widgets/admin_view.dart';
-import 'package:latihan/ui_screens/users/shop.dart';
 import 'package:latihan/ui_screens/users/widgets/akun.dart';
 
 class HomeCoba extends StatefulWidget {

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:latihan/ui_screens/admin/ctrl_input.dart';
-import 'package:latihan/ui_screens/admin/widgets/admin_detail.dart';
+import 'package:latihan/ui_screens/users/widgets/detail_user.dart';
 
 class ItemX extends StatelessWidget {
   final String id;
@@ -18,9 +18,9 @@ class ItemX extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.waiting) {
           return const CircularProgressIndicator();
         } else if (snapshot.hasError) {
-          return const Text('Error');
-        } else if (!snapshot.hasData) {
-          return const Text('Data not found');
+          //   return const Text('Error');
+          // } else if (!snapshot.hasData) {
+          //   return const Text('Data not found');
         }
 
         final data = snapshot.data;
@@ -30,9 +30,9 @@ class ItemX extends StatelessWidget {
         }
 
         return Container(
+          width: 200,
           margin: const EdgeInsets.symmetric(vertical: 15, horizontal: 10),
-          // padding: const EdgeInsets.only(left: 15, right: 15, top: 10),
-          // width: 200,
+          padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
           decoration: BoxDecoration(
             color: Colors.white,
             borderRadius: BorderRadius.circular(20),
@@ -68,7 +68,7 @@ class ItemX extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => AdminDetail(id: id),
+                      builder: (context) => DeatilUser(id: id),
                     ),
                   );
                 },
@@ -82,7 +82,6 @@ class ItemX extends StatelessWidget {
                         height: 200,
                         child: Image.network(
                           '${data['image_url']}',
-                          // Menyesuaikan gambar ke dalam ukuran yang diberikan
                         ),
                       ),
                       const SizedBox(height: 10),
@@ -94,6 +93,12 @@ class ItemX extends StatelessWidget {
                       ),
                       Text(
                         'warna : ${data['warna']}',
+                        style: const TextStyle(
+                          color: Colors.black,
+                        ),
+                      ),
+                      Text(
+                        'model : ${data['model']}',
                         style: const TextStyle(
                           color: Colors.black,
                         ),

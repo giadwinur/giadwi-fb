@@ -3,7 +3,6 @@
 import 'package:english_words/english_words.dart';
 import 'package:flutter/material.dart';
 import 'package:latihan/models/admin.dart';
-import 'package:latihan/ui_screens/admin/admin_data.dart';
 import 'package:latihan/ui_screens/admin/ctrl_input.dart';
 import 'package:latihan/ui_screens/admin/data.dart';
 import 'package:latihan/ui_screens/admin/widgets/admin_detail.dart';

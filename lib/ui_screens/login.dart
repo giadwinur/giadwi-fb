@@ -11,16 +11,9 @@ class Login extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           title: const Text('Login'),
-        ),
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              const Text('Login By:'),
-              ElevatedButton(
-                onPressed: () async {
-                  // Navigator.push(context, route)
-                  // ignore: use_build_context_synchronously
+          actions: [
+            IconButton(
+                onPressed: () {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
@@ -30,10 +23,31 @@ class Login extends StatelessWidget {
                     ),
                   );
                 },
-                child: const Text(
-                  "Page Admin",
-                ),
-              ),
+                icon: const Icon(Icons.assignment_ind_outlined))
+          ],
+        ),
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Login By:'),
+              // ElevatedButton(
+              //   onPressed: () async {
+              //     // Navigator.push(context, route)
+              //     // ignore: use_build_context_synchronously
+              //     Navigator.push(
+              //       context,
+              //       MaterialPageRoute(
+              //         builder: (context) {
+              //           return const AdminView();
+              //         },
+              //       ),
+              //     );
+              //   },
+              //   child: const Text(
+              //     "Page Edit Admin",
+              //   ),
+              // ),
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () async {
@@ -41,6 +55,7 @@ class Login extends StatelessWidget {
                   // Navigator.push(context, route)
                   // ignore: use_build_context_synchronously
                   Navigator.push(
+                    // ignore: use_build_context_synchronously
                     context,
                     MaterialPageRoute(
                       builder: (context) {

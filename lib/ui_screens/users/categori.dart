@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:latihan/ui_screens/admin/ctrl.dart';
 
 class CategoriX extends StatelessWidget {
   const CategoriX({super.key});
@@ -16,9 +15,58 @@ class CategoriX extends StatelessWidget {
               decoration: BoxDecoration(
                   // color: Colors
                   borderRadius: BorderRadius.circular(20)),
-              child: const Row(
+              child: Row(
                 crossAxisAlignment: CrossAxisAlignment.center,
-                children: [],
+                children: [
+                  Container(
+                    width: 150,
+                    height: 60,
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Kemeja Wanita',
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 150,
+                    height: 60,
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Koko Pria',
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 150,
+                    height: 60,
+                    margin: const EdgeInsets.symmetric(horizontal: 10),
+                    padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 10),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    child: const Center(
+                      child: Text(
+                        'Pakaian Laki-laki',
+                        style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ),
           ],

@@ -50,7 +50,9 @@ class Akun extends StatelessWidget {
                             : () async {
                                 await FirebaseAuth.instance.currentUser!.delete();
                                 Navigator.pushReplacement(
+                                  // ignore: use_build_context_synchronously
                                   context,
+                                  // ignore: prefer_const_constructors
                                   MaterialPageRoute(builder: (context) => Login()),
                                 );
                               },

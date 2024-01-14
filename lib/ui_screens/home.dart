@@ -1,7 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// ignore: unnecessary_import
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:latihan/ui_screens/admin/widgets/admin_view.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+// ignore: avoid_web_libraries_in_flutter
 import 'dart:html' as html;
 
 import 'package:latihan/ui_screens/login.dart';
@@ -20,14 +21,19 @@ class Home extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              ElevatedButton(
-                onPressed: () {
-                  html.window.open('https://github.com/giadwinur/giadwi-fb', 'new tab');
-                },
-                child: const Text(
-                  "Go to Github",
-                ),
-              ),
+              IconButton(
+                  onPressed: () {
+                    html.window.open('https://github.com/giadwinur/giadwi-fb', 'new tab');
+                  },
+                  icon: const FaIcon(FontAwesomeIcons.github)),
+              // ElevatedButton(
+              //   onPressed: () {
+              //     html.window.open('https://github.com/giadwinur/giadwi-fb', 'new tab');
+              //   },
+              //   child: const Text(
+              //     "Go to Github",
+              //   ),
+              // ),
               const SizedBox(height: 10),
               ElevatedButton(
                 onPressed: () {
